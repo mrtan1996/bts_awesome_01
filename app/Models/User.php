@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Tour;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable
 {
@@ -16,7 +18,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'avatar',
+        'role',
     ];
 
     /**
@@ -36,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tourFavorites(){
+        return $this->hasMany(Tour::class, 'user_favorites');
+    }
+
+    public function tourRates(){
+        return $this->hasMany(Tour::class, 'user_rates');
+    }
+
 }
