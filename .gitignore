@@ -11,3 +11,6 @@ npm-debug.log
 yarn-error.log
 .editorconfig
 .gitattributes
+/public/css/common_css
+/public/js/common_js
+/public/fonts/
