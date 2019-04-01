@@ -12,3 +12,7 @@
 */
 
 Route::get('/','UserController@index');
+
+Route::get('/admin', function () {
+    return view('admin/modules/dashboard');
+});
