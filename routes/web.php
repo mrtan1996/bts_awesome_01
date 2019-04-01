@@ -13,6 +13,6 @@
 
 Route::get('/','UserController@index');
 
-Route::get('/admin', function () {
-    return view('admin/modules/dashboard');
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+
 });
