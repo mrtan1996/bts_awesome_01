@@ -1,5 +1,7 @@
 {
     "/js/common_js/admin/admin.js": "/js/common_js/admin/admin.js",
     "/css/common_css/admin/vendor.css": "/css/common_css/admin/vendor.css",
-    "/css/common_css/admin/admin.css": "/css/common_css/admin/admin.css"
+    "/js/common_js/user/user_home.js": "/js/common_js/user/user_home.js",
+    "/css/common_css/admin/admin.css": "/css/common_css/admin/admin.css",
+    "/css/common_css/user/user_home.css": "/css/common_css/user/user_home.css"
 }

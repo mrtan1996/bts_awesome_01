@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/','UserController@index');
-
+/* Web routes for admin */
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-
+    //
 });
 
+/* Web routes for authen */
 Route::group(['prefix' => 'account'], function () {
     Route::get('login', 'Auth\LoginController@login')->name('login');
 });
+
+/* Web routes for user */
+Route::group(['prefix' => 'user'], function () {
+    //
+});
+
+Route::get('/', 'UserController@index')->name('home');
