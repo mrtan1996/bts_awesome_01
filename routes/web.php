@@ -16,3 +16,7 @@ Route::get('/','UserController@index');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 });
+
+Route::group(['prefix' => 'account'], function () {
+    Route::get('login', 'Auth\LoginController@login')->name('login');
+});
