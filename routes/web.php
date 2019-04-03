@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 /* Web routes for authen */
 Route::group(['prefix' => 'account'], function () {
     Route::get('login', 'Auth\LoginController@login')->name('login');
+    Route::post('handle-login','Auth\LoginController@handleLogin')->name('handle-login');
 });
 
 /* Web routes for user */

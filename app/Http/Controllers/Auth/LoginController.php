@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Repositories\Auth\AuthRepositoryInterface;
+use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -26,14 +28,16 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+    private $authRepository;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(AuthRepositoryInterface $authRepository)
     {
+        $this->authRepository = $authRepository;
+
         $this->middleware('guest')->except('logout');
     }
 
@@ -41,4 +45,13 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+
+    public function handleLogin(LoginRequest $request)
+    {
+        dd(1);
+    }
+    // public function __construct(UserRepositoryInterface $userRepository)
+    // {
+    //     $this->userRepository = $userRepository;
+    // }
 }
