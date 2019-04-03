@@ -23,7 +23,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = $this->userRepository->all();
+        return view('user.modules.home');
     }
 
     /**

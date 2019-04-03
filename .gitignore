@@ -14,3 +14,4 @@ yarn-error.log
 /public/css/common_css/
 /public/js/common_js/
 /public/fonts/
+/public/dist/
